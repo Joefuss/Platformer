@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://cw3cnknxuhdef"]
+
+[ext_resource type="Texture2D" uid="uid://ow56a6nb6cke" path="res://art/PNG/Backgrounds/set1_background.png" id="1_3evif"]
+[ext_resource type="Texture2D" uid="uid://b38lp1ymnm7o0" path="res://art/PNG/Backgrounds/set2_tiles.png" id="2_8sg3q"]
+[ext_resource type="PackedScene" uid="uid://cu3siimfndnux" path="res://scenes/tile_map.tscn" id="3_5pnm5"]
+[ext_resource type="PackedScene" uid="uid://6pwyybkahow7" path="res://scenes/player.tscn" id="4_wa1kj"]
+[ext_resource type="PackedScene" uid="uid://cfasuimcv1u46" path="res://scenes/enemy.tscn" id="5_o2rh8"]
+[ext_resource type="PackedScene" uid="uid://b3xc42epelc7k" path="res://scenes/edge_marker.tscn" id="6_ddlum"]
+
+[node name="Level 1" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1280, 960)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Sky"]
+scale = Vector2(2, 2)
+texture = ExtResource("1_3evif")
+centered = false
+
+[node name="Blocks" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1280, 960)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Blocks"]
+scale = Vector2(2, 2)
+texture = ExtResource("2_8sg3q")
+centered = false
+
+[node name="TileMap" parent="." instance=ExtResource("3_5pnm5")]
+layer_0/tile_data = PackedInt32Array(393218, 65536, 0, 393219, 131072, 0, 393220, 131072, 0, 393221, 131072, 0, 393222, 131072, 0, 393223, 131072, 0, 393224, 196608, 0, 589834, 65536, 0, 589835, 131072, 0, 589836, 196608, 0, 786439, 65536, 0, 786440, 131072, 0, 786441, 196608, 0, 720898, 65536, 1, 786434, 65536, 2, 720899, 131072, 1, 786435, 131072, 2, 851972, 131072, 2, 917509, 131072, 2, 983046, 131072, 2, 1048583, 131072, 2, 851971, 0, 0, 917508, 0, 0, 983045, 0, 0, 1048582, 0, 0, 1114119, 0, 0, 851970, 0, 0, 917506, 0, 0, 983042, 0, 0, 1048578, 0, 0, 1114114, 0, 1, 1114115, 0, 0, 1114116, 0, 0, 1114117, 0, 0, 1114118, 0, 0, 1048581, 0, 0, 1048580, 0, 0, 1048579, 0, 0, 983043, 0, 0, 983044, 0, 0, 917507, 0, 0, 786436, 131072, 1, 851973, 131072, 1, 917510, 131072, 1, 983047, 131072, 1, 1048584, 131072, 1, 1114120, 131072, 2, 1179650, 0, 0, 1245186, 0, 0, 1310722, 0, 0, 1376258, 0, 0, 1441794, 0, 0, 1507330, 0, 0, 1572866, 0, 0, 1638402, 0, 0, 1703938, 0, 1, 1900544, 0, 1, 1900545, 131072, 0, 1900546, 131072, 0, 1900547, 131072, 0, 1769472, 0, 0, 1703936, 0, 0, 1638400, 0, 0, 1835008, 0, 0, 1572864, 0, 0, 1507328, 0, 0, 1441792, 0, 0, 1376256, 0, 0, 1310720, 0, 0, 1245184, 0, 0, 1179648, 0, 0, 1114112, 0, 0, 1048576, 0, 0, 983040, 0, 0, 917504, 0, 0, 851968, 0, 0, 786432, 0, 0, 720896, 0, 0, 655360, 0, 0, 589824, 0, 0, 524288, 0, 0, 458752, 0, 0, 393216, 0, 0, 327680, 0, 0, 262144, 0, 0, 1835013, 262144, 0, 1835024, 196608, 0, 1703953, 262144, 0, 1835026, 65536, 0, 1835027, 196608, 0, 1835023, 65536, 0, 1769494, 262144, 0, 1638424, 262144, 0, 0, 0, 1, 65536, 0, 0, 131072, 0, 0, 196608, 0, 0, 1835022, 262144, 0, 1835021, 262144, 0, 1703945, 262144, 0, 1245192, 65536, 0, 1245193, 131072, 0, 1245194, 131072, 0, 1245195, 131072, 0, 1245196, 131072, 0, 1245197, 131072, 0, 1245198, 131072, 0, 1245199, 131072, 0, 1245200, 196608, 0, 1179661, 655360, 1, 720904, 589824, 1, 524298, 720896, 0, 1769486, 720896, 3, 1638409, 589824, 2, 1572888, 655360, 3, 917516, 65536, 0, 917517, 131072, 0, 917518, 131072, 0, 917519, 131072, 0, 917520, 131072, 0, 917521, 131072, 0, 917522, 131072, 0, 917523, 131072, 0, 917524, 131072, 0, 917525, 131072, 0, 917526, 131072, 0, 917527, 131072, 0, 917528, 131072, 0, 917529, 131072, 0, 917530, 196608, 0)
+
+[node name="Player" parent="." instance=ExtResource("4_wa1kj")]
+position = Vector2(155, 379)
+
+[node name="Enemy" parent="." instance=ExtResource("5_o2rh8")]
+position = Vector2(732, 548)
+
+[node name="EdgeMarker" parent="." instance=ExtResource("6_ddlum")]
+position = Vector2(828, 530)
+
+[node name="EdgeMarker2" parent="." instance=ExtResource("6_ddlum")]
+position = Vector2(594, 537)
+
+[connection signal="body_entered" from="EdgeMarker" to="Enemy" method="_on_edge_marker_body_entered"]
+[connection signal="body_entered" from="EdgeMarker2" to="Enemy" method="_on_edge_marker_body_entered"]
